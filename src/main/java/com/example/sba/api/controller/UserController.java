@@ -3,15 +3,12 @@ package com.example.sba.api.controller;
 import com.example.sba.api.model.User;
 import com.example.sba.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/user")
+@RequestMapping(path = "api/v1/users")
 public class UserController {
 
     private final UserService userService;
@@ -22,7 +19,24 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getUser(){
+    public List<User> getUsers(){
         return userService.getUser();
+    }
+    @PostMapping
+    public void registerNewUser(@RequestBody User user){
+        userService.addNewUser(user);
+    }
+
+    @DeleteMapping(path = "{userId}")
+    public void deleteUser(@PathVariable("userId") Integer userId){
+        userService.deleteUser(userId);
+    }
+
+    @PutMapping(path = "{userId}/{email}")
+    public void updateUser(@PathVariable("userId") Integer userId,
+                           @PathVariable(required = false) Integer role,
+                           @PathVariable(required = false) String email,
+                           @PathVariable(required = false) String password){
+        userService.updateUser(userId, role, email, password);
     }
 }

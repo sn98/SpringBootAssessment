@@ -3,7 +3,7 @@ package com.example.sba.api.model;
 import jakarta.persistence.*;
 
 @Entity(name = "Users")
-//@Table(name = "users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -2,10 +2,10 @@ package com.example.sba.api.model;
 
 import jakarta.persistence.*;
 
-@Table(name = "movies")
+@Entity
+//@Table(name = "movies")
 public class Movie {
     @Id
-    @OneToOne(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private int id;
     private String title;
     private Number year;
@@ -14,6 +14,10 @@ public class Movie {
         this.id = id;
         this.title = title;
         this.year = year;
+    }
+
+    public Movie() {
+
     }
 
     public int getId(){
@@ -34,5 +38,14 @@ public class Movie {
 
     public void setYear(Number year){
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                '}';
     }
 }
