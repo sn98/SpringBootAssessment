@@ -1,0 +1,28 @@
+spring.datasource.url=jdbc:postgresql://service.smssoftwarestudio.com:5432/movies_test_db
+spring.datasource.username=moviestestuser
+spring.datasource.password=SmSteam123
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+Schema
+CREATE TABLE directors (movie_id INTEGER NOT NULL,person_id INTEGER NOT NULL, FOREIGN KEY(movie_id) REFERENCES movies (id), FOREIGN KEY (person_id) REFERENCES people (id))
+"movie_id" INTEGER NOT NULL
+"person_id" INTEGER NOT NULL
+CREATE TABLE movies (id INTEGER, title TEXT NOT NULL, year NUMERIC, PRIMARY KEY(id))
+"id" INTEGER
+"title" TEXT NOT NULL
+"year" NUMERIC
+CREATE TABLE people (id INTEGER, name TEXT NOT NULL, birth NUMERIC, PRIMARY KEY(id))
+"id" INTEGER
+"name" TEXT NOT NULL
+"birth" NUMERIC
+CREATE TABLE ratings (movie_id INTEGER NOT NULL, rating REAL NOT NULL, votes INTEGER NOT NULL, FOREIGN KEY(movie_id) REFERENCES movies (id))
+"movie_id" INTEGER NOT NULL
+"rating" REAL NOT NULL
+"votes" INTEGER NOT NULL
+CREATE TABLE stars (movie_id INTEGER NOT NULL, person_id INTEGER NOT NULL, FOREIGN KEY(movie_id) REFERENCES movies (id), FOREIGN KEY(person_id) REFERENCES people(id))
+"movie_id" INTEGER NOT NULL
+"person_id" INTEGER NOT NULL
