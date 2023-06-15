@@ -26,3 +26,24 @@ CREATE TABLE ratings (movie_id INTEGER NOT NULL, rating REAL NOT NULL, votes INT
 CREATE TABLE stars (movie_id INTEGER NOT NULL, person_id INTEGER NOT NULL, FOREIGN KEY(movie_id) REFERENCES movies (id), FOREIGN KEY(person_id) REFERENCES people(id))
 "movie_id" INTEGER NOT NULL
 "person_id" INTEGER NOT NULL
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "password": "12345678",
+  "role": 0,
+  "username": "sea",
+  "email": "seagayle995@gmail.com"
+}
+
+###
+GET http://localhost:8080/api/v1/users
+
+###
+PUT http://localhost:8080/api/v1/users/302/seangayle995@gmail.com
+Content-Type: application/json
+
+###
+DELETE http://localhost:8080/api/v1/users/202
