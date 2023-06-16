@@ -1,4 +1,4 @@
-package com.example.sba.service;
+package com.example.sba.api.service;
 
 import com.example.sba.api.model.Director;
 import com.example.sba.api.repositories.DirectorRepository;

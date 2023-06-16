@@ -2,9 +2,11 @@ package com.example.sba.api.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "movies")
-public class Movie {
+public class Movie implements Serializable {
     @Id
     private int id;
     private String title;
@@ -38,14 +40,5 @@ public class Movie {
 
     public void setYear(Number year){
         this.year = year;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", year=" + year +
-                '}';
     }
 }

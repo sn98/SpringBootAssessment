@@ -1,7 +1,7 @@
 package com.example.sba.api.controller;
 
 import com.example.sba.api.model.User;
-import com.example.sba.service.UserService;
+import com.example.sba.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

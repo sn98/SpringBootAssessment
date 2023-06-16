@@ -1,7 +1,7 @@
 package com.example.sba.api.controller;
 
 import com.example.sba.api.model.Director;
-import com.example.sba.service.DirectorService;
+import com.example.sba.api.service.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

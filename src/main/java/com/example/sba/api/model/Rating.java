@@ -1,13 +1,12 @@
 package com.example.sba.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 @Entity
 @Table(name = "ratings")
-public class Rating {
+public class Rating  {
     @Id
     private int movie_id;
     private double rating;
@@ -20,14 +19,6 @@ public class Rating {
 
     public Rating() {
 
-    }
-
-    public int setMovieId(){
-        return movie_id;
-    }
-
-    public void setMovieId(int movie_id){
-        this.movie_id = movie_id;
     }
 
     public double getRating(){
@@ -44,4 +35,5 @@ public class Rating {
     public void setVotes(int votes){
         this.votes = votes;
     }
+
 }
