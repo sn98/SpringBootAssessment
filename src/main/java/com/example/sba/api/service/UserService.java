@@ -26,7 +26,7 @@ public class UserService {
     }
 
     public void addNewUser(User user) {
-        Optional<User> userByEmail = userRepository.findUserByEmail(user.getEmail());
+        Optional<User> userByEmail = userRepository.findUserByUsername(user.getUsername());
         if (userByEmail.isPresent()){
             throw new IllegalStateException("email already exists");
         }
@@ -42,22 +42,22 @@ public class UserService {
         userRepository.deleteById(userId);
     }
     @Transactional
-    public void updateUser(Integer userId, Integer role, String email, String password) {
+    public void updateUser(Integer userId, String username, String password) {
         User user = userRepository.findById(userId).orElseThrow(()-> new IllegalStateException("user with id " + userId + " does not exist"));
 //        if (role != null && !Objects.equals(user.getRole(), role)){
 //            //Checking if the new role is not the same as the old current one
 //            user.setRole(role);
 //        }
 
-        System.out.println("the damn email " +email);
+        System.out.println("the damn email " +username);
 
-        if (email != null && email.length() > 0 && !Objects.equals(user.getEmail(), email)){
-            System.out.println("the damn email " +email);
-            Optional<User> userOptional = userRepository.findUserByEmail(email);
+        if (username != null && username.length() > 0 && !Objects.equals(user.getUsername(), username)){
+            System.out.println("the damn email " +username);
+            Optional<User> userOptional = userRepository.findUserByUsername(username);
             if (userOptional.isPresent()){
                 throw new IllegalStateException("email already exists");
             }
-            user.setEmail(email);
+            user.setUsername(username);
         }
 
 //        if (password != null && password.length()>=8 && !Objects.equals(user.getPassword(), password)){
