@@ -20,7 +20,8 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping(params = { "page", "size" })
+//    @GetMapping(params = { "page", "size" })
+    @GetMapping
     public List<Movie> getMovies(){
         return movieService.getMovies();
     }

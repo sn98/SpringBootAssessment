@@ -3,7 +3,7 @@ package com.example.sba.api.model;
 import jakarta.persistence.*;
 
 @Entity
-//@Table(name = "movies")
+@Table(name = "movies")
 public class Movie {
     @Id
     private int id;

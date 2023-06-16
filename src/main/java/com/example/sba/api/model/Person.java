@@ -5,20 +5,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.math.BigInteger;
+@Entity
 @Table(name = "people")
-public class People {
+public class Person {
     @Id
     private int id;
     private String name;
     private Number birth;
 
-    public People(int id, String name, Number birth){
+    public Person(int id, String name, Number birth){
         this.id = id;
         this.name = name;
         this.birth = birth;
     }
 
-    public People() {
+    public Person() {
 
     }
 

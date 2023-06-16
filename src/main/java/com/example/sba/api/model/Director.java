@@ -1,19 +1,23 @@
 package com.example.sba.api.model;
 
 import jakarta.persistence.*;
-
+@Entity
 @Table(name = "directors")
-public class Directors {
+public class Director {
     @Id
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id")
     private int movie_id;
 
     private int person_id;
 
-    public Directors(int movie_id, int person_id){
+    public Director(int movie_id, int person_id){
         this.movie_id = movie_id;
         this.person_id = person_id;
+    }
+
+    public Director() {
+
     }
 
     public int setMovieId(){
