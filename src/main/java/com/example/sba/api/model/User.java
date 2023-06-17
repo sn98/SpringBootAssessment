@@ -23,6 +23,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String password;
+    @Column(unique=true)
     private String username;
     @Enumerated(EnumType.STRING)
     private Role role;
