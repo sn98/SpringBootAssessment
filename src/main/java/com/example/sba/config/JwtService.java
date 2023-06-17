@@ -1,4 +1,4 @@
-package com.example.sba.auth;
+package com.example.sba.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -17,7 +17,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "rh76ZviyQG6zsRUfZgr3Px9w0v5FDatgGrhgZi6/WsKvuRE8ygSLm466DByk2Inol5q6V4ErsRpBPY751cmcoW0SYA9zE7UWZQYQTsjMBq3bAbJSAW+hWbkHZGVVpW5IKm2vxArrfLosTAWB1ZvWVgzA2dntePzU3LCjW+V1vHLAXqWnkwcGI+h5pHHnGvPdyuLZCMv0GSZ1B8APk7Ymm8Q7YvKRHOhGxg1nebo3O6UWTKY9GY0NPSChwwXV0IZzDUMw6O4u7rDPBEajSDK3meP6rQW6Y/KLfPp0X6QsN9zp9Xm4GqI+zNVaZmRO8U4ZgP/Je+JTQoyD5qsdnvnD3/78l4KtXvoFX7PJKQXh1JA=\n";
+    private static final String SECRET_KEY = "84789998A86C9686CDD104B68C419F2FCA133256E887DDA612F06C546BE6018A";
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);

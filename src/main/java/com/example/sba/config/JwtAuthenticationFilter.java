@@ -1,4 +1,4 @@
-package com.example.sba.auth;
+package com.example.sba.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
