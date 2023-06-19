@@ -47,4 +47,13 @@ public class Movie implements Serializable {
     public void setYear(Number year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }
